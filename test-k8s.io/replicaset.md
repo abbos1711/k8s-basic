@@ -8,11 +8,9 @@ apiVersion: apps/v1
 kind: ReplicaSet   #always
 
 metadata:
-
   name: frontend
   
-  labels:
-  
+  labels: 
     app: guestbook
     
     tier: frontend
