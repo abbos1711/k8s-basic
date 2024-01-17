@@ -4,37 +4,24 @@ As such, it is often used to guarantee the availability of a specified number of
 
 
 apiVersion: apps/v1
-
 kind: ReplicaSet   #always
 metadata:
-  name: frontend
-  
+  name: frontend  
   labels: 
     app: guestbook
-    
     tier: frontend
 spec:
  # modify replicas according to your case
   replicas: 3    # how many pods 
-  
   selector:
-  
-    matchLabels:
-    
+      matchLabels:  
       tier: frontend
-  
-  template:
-    
+  template:    
     metadata:
-    
-      labels:
-      
-        tier: frontend
-    
-    spec:
-    
-      containers:
-      
+      labels:      
+        tier: frontend    
+    spec:    
+      containers:      
       - name: php-redis
       
         image: gcr.io/google_samples/gb-frontend:v3
