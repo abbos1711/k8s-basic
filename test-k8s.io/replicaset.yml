@@ -22,8 +22,7 @@ spec:
         tier: frontend    
     spec:    
       containers:      
-      - name: php-redis
-      
+      - name: php-redis      
         image: gcr.io/google_samples/gb-frontend:v3
 
 # kubectl apply -f frontend.yaml
