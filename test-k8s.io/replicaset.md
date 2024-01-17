@@ -14,10 +14,8 @@ metadata:
     app: guestbook
     
     tier: frontend
-
 spec:
  # modify replicas according to your case
-  
   replicas: 3    # how many pods 
   
   selector:
