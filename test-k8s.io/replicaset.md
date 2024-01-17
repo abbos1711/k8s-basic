@@ -6,7 +6,6 @@ As such, it is often used to guarantee the availability of a specified number of
 apiVersion: apps/v1
 
 kind: ReplicaSet   #always
-
 metadata:
   name: frontend
   
