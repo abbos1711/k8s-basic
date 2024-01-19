@@ -1,5 +1,5 @@
-A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
-As such, it is often used to guarantee the availability of a specified number of identical Pods.
+#A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
+#As such, it is often used to guarantee the availability of a specified number of identical Pods.
 
 
 apiVersion: apps/v1
@@ -27,5 +27,5 @@ spec:
 # kubectl apply -f frontend.yaml
 # kubectk get rs
 
-Note: For 2 ReplicaSets specifying the same .spec.selector but different .spec.template.metadata.labels and .spec.template.spec fields, each ReplicaSet ignores the Pods created by the other ReplicaSet.
+#Note: For 2 ReplicaSets specifying the same .spec.selector but different .spec.template.metadata.labels and .spec.template.spec fields, each ReplicaSet ignores the Pods created by the other ReplicaSet.
 
