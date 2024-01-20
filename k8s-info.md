@@ -112,21 +112,33 @@ A Secret is an object that contains a small amount of sensitive data such as a p
 SOME COMMANDS: 
 
 kubectl get pods -l environment=production,tier=frontend
+
 kubectl get pods -l 'environment in (production),tier in (frontend)'
+
 kubectl get pods -l 'environment in (production, qa)'
+
 kubectl get namespace
+
 kubectl get replicationcontrollers
+
 kubectl delete replicationcontroller <replicationcontroller-name>
+
 kubectl describe pod [podname] - full info
+
 kubectl get limitrange
+
 kubectl describe limitrange cpu-resource-constraint
 
-
 kubectl get statefulsets,services --all-namespaces --field-selector metadata.namespace!=default
+
 kubectl describe pod {pod_name}
+
 kubectl create -f nginx.yaml  : Create the objects defined in a configuration file:
+
 kubectl replace -f nginx.yaml : Update the objects defined in a configuration file by overwriting the live configuration
+
 kubectl logs [pod_name]
+
 
 
 
