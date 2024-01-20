@@ -47,10 +47,15 @@ Kubectl is a command-line tool used for interacting with Kubernetes clusters. It
 
 Kubernetes v1.29 supports clusters :
 
+
 --->No more than 110 pods per node
+
 --->No more than 5,000 nodes
+
 --->No more than 150,000 total pods
+
 --->No more than 300,000 total containers.
+
 
 Labels are key/value pairs that are attached to objects such as Pods. Example labels:
 
