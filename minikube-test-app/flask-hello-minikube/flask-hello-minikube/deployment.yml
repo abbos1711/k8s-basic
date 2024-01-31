@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-hello-kubernetes-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: flask-hello-kubernetes
+  template:
+    metadata:
+      labels:
+        app: flask-hello-kubernetes
+    spec:
+      containers:
+      - name: flask-hello-kubernetes
+        image: 10449/python-test:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 150m
+            memory: 200Mi
+          requests:
+            cpu: 150m
+            memory: 100Mi
+        ports:
+        - containerPort: 5000

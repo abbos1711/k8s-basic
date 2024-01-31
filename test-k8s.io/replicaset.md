@@ -1,0 +1,31 @@
+#A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
+#As such, it is often used to guarantee the availability of a specified number of identical Pods.
+
+
+apiVersion: apps/v1
+kind: ReplicaSet   #always
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
+spec:
+  # modify replicas according to your case
+  replicas: 3    # how many pods 
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: php-redis
+        image: gcr.io/google_samples/gb-frontend:v3
+
+# kubectl apply -f frontend.yaml
+# kubectk get rs
+
+#Note: For 2 ReplicaSets specifying the same .spec.selector but different .spec.template.metadata.labels and .spec.template.spec fields, each ReplicaSet ignores the Pods created by the other ReplicaSet.
+

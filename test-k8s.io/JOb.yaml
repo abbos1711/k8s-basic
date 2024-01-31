@@ -1,0 +1,15 @@
+# A Job creates one or more Pods and will continue to retry execution of the Pods until a specified number of them successfully terminate.
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tizim2
+spec:
+  template:
+    spec:
+      containers:
+      - name: tizim2
+        image: perl:5.34.0
+        command: ["perl", "-Mbignum=bpi", "-wle", "print bpi(4000)"]
+      restartPolicy: Never
+  backoffLimit: 4
