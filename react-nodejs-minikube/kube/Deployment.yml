@@ -17,11 +17,15 @@ spec:
       labels:
         app: react-webapp
     spec:
+      tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
       containers:
-      - image: docker.io/bbachin1/react-node-webapp
+      - image: 10449/nodejs-minikube:latest
         name: webapp
         imagePullPolicy: Always
         resources: {}
         ports:
-          - containerPort: 3080 
+          - containerPort: 3080
 status: {}

@@ -4,7 +4,7 @@ metadata:
   name: webapp
 spec:
   containers:
-    - image: docker.io/bbachin1/react-node-webapp
+    - image: 10449/nodejs-minikube
       name: webapp
       imagePullPolicy: Always
       resources: {}
